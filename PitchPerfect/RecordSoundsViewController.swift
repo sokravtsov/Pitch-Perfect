@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundsViewController.swift
 //  PitchPerfect
 //
 //  Created by Sergey Kravtsov on 16.06.16.
@@ -27,12 +27,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     
     @IBAction func recordAudio(sender: AnyObject) {
-        print ("record button was pressed")
         recordingLabel.text = "Recording in progress..."
         stopRecordingButton.enabled = true
         recordButton.enabled = false
@@ -51,12 +49,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
-        
     }
     
     
     @IBAction func stopRecording(sender: AnyObject) {
-        print ("stop recording button pressed")
         recordButton.enabled = true
         stopRecordingButton.enabled = false
         recordingLabel.text = "Tap to record"
@@ -67,7 +63,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print ("viewWillAppear called")
         stopRecordingButton.enabled = false
     }
 
@@ -88,13 +83,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
                 PlaySoundsViewController
             let recordedAudioURL = sender as! NSURL
             playSoundsVC.recordedAudioURL = recordedAudioURL
-            
-            
-            
         }
     }
-    
-    
 }
 
 
