@@ -24,11 +24,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         stopRecordingButton.enabled = false
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     
     @IBAction func recordAudio(sender: AnyObject) {
         recordingLabel.text = "Recording in progress..."
